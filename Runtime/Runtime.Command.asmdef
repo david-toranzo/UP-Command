@@ -1,6 +1,6 @@
 {
-    "name": "Runtime",
-    "rootNamespace": "",
+    "name": "Runtime.Command",
+    "rootNamespace": "Patterns.Command",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
