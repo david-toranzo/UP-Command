@@ -11,7 +11,11 @@ namespace Patterns.Command
         public void SetCommandManager(ICommandDoneTask commandDone)
         {
             _commandDoneTask = commandDone;
+
+            InitialConfiguration(commandDone);
         }
+
+        public abstract void InitialConfiguration(ICommandDoneTask commandDone);
 
         protected void NotifyDoneExecution()
         {
