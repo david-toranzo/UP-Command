@@ -8,7 +8,7 @@ namespace Patterns.Command
     {
         [SerializeField] private BaseCommand[] _baseCommands;
 
-        private readonly List<ICommandWithManager> _commands;
+        private List<ICommandWithManager> _commands;
 
         public Action OnStartExecute { get; set; }
         public Action OnFinishAllExecute { get; set; }
@@ -23,6 +23,8 @@ namespace Patterns.Command
 
         public void AddAndSetNodes(ICommandWithManager[] commands)
         {
+            _commands = new List<ICommandWithManager>();
+
             foreach (ICommandWithManager nodeCommander in commands)
             {
                 nodeCommander.SetCommandManager(this);
