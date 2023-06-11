@@ -16,7 +16,7 @@ namespace Patterns.Command
 
         protected int _commandInternalCount = 0;
 
-        private void Start()
+        private void Awake()
         {
             AddAndSetNodes(_baseCommands);
         }
@@ -34,7 +34,7 @@ namespace Patterns.Command
 
         public void StartMakeCommandAction()
         {
-            OnStartExecute.Invoke();
+            OnStartExecute?.Invoke();
 
             _commandInternalCount = 0;
 
