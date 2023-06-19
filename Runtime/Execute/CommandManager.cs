@@ -38,11 +38,13 @@ namespace Patterns.Command
 
             _commandInternalCount = 0;
 
-            DoneExecutionCommand();
+            RunNextCommand();
         }
 
         public void DoneExecutionCommand()
         {
+            _commandInternalCount++;
+
             OnFinishOneExecute?.Invoke(_commandInternalCount);
 
             if (_commandInternalCount >= _commands.Count)
@@ -57,7 +59,6 @@ namespace Patterns.Command
         public void RunNextCommand()
         {
             _commands[_commandInternalCount].Execute();
-            _commandInternalCount++;
         }
 
         private void FinishAllExecutionCommand()
